@@ -1,0 +1,152 @@
+/* Customização Global de Cores */
+body {
+  background-color: #f8fafc;
+  color: #0f172a;
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.layout-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  border-left: none !important;
+  border-right: none !important;
+}
+
+/* Cabeçalho */
+.cabecalho-tech {
+  text-align: center;
+  padding: 30px 0;
+  border-bottom: 2px solid #1f1a3a;
+  margin-bottom: 40px;
+}
+
+.cabecalho-tech h1 {
+  color: #a855f7;
+  font-size: 2.6rem;
+  margin: 0;
+  letter-spacing: 1.5px;
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.2);
+}
+
+.subtitulo {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  margin-top: 5px;
+  display: inline-block;
+}
+
+/* Vitrine Grid */
+.vitrine-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  flex-grow: 1;
+}
+
+/*Reduzi para 1 coluna só se abrir no celular*/
+@media (max-width: 600px) {
+  .vitrine-grid {
+    grid-template-columns: 1fr;
+  }  
+}
+
+/* Design do Card  */
+.tech-card {
+  background: #ffffff;
+  border: 1px solid #2e245a;
+  border-radius: 16px;
+  padding: 25px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 20px  rgba(0, 0, 0, 0.06);
+}
+
+.tech-card:hover {
+  transform: translateY(-5px);
+  border-color: #a855f7;
+}
+
+.card-icone {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+}
+
+.card-titulo {
+  font-size: 1.3rem;
+  color: #1e293b;
+  margin: 0 0 10px 0;
+}
+
+.card-preco {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #16a34a;
+  margin: 0 0 15px 0;
+}
+
+.card-badge-area {
+  min-height: 30px;
+  margin-bottom: 15px;
+}
+
+/* Peça de UI: Selo */
+.selo-custom-tag {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.selo-sucesso {
+  background-color: rgba(74, 222, 128, 0.1);
+  color: #4ade80;
+  border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+/* Peça de UI: Botão customizado */
+.btn-custom {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-sucesso {
+  background-color: #7c3aed;
+  color: #ffffff;
+}
+
+.btn-sucesso:hover {
+  background-color: #6d28d9;
+}
+
+.btn-sucesso:active {
+  transform: scale3d(0.98);
+}
+
+/* Rodapé */
+.rodape-tech {
+  margin-top: 60px;
+  padding: 25px;
+  background-color: #1e293b;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.88rem;
+}
+
+.creditos {
+  margin-top: 6px;
+  color: #64748b;
+}
