@@ -1,19 +1,32 @@
+import { useState, useEffect } from "react";
 import ProdutoCard from "./ProdutoCard";
 
-// Array de produtos totalmente exclusivo com mais de 4 itens (Requisito obrigatório)
-const bancoDeProdutos = [
-    { id: 201, nome: "Notebook Ultra Slim", preco: 3899.90, imagem: "💻", freteGratis: true },
-    { id: 202, nome: "Headset Gamer 7.1", preco: 249.90, imagem: "🎧", freteGratis: false },
-    { id: 203, nome: "Teclado Mecânico Pro", preco: 399.00, imagem: "⌨️", freteGratis: true },
-    { id: 204, nome: "Mouse Óptico Wireless", preco: 149.90, imagem: "🖱️", freteGratis: false },
-];
-
 function Vitrine() {
+    const [produtos, setProdutos] = useState([]);
+    const [carregando, setCarregando] = useState(true);
+    const [erro, setErro] = useState(null);
+
+    useEffect(() => {
+        fetch("https://dummyjson.com/products?limit=12")
+        .then((res) => res.json())
+        .then((dados) => {
+            setProdutos(dados.products);
+            setCarregando(false);
+        })
+        .catch(() => {
+            setErro("Não foi possível carregar os produtos.");
+            setCarregando(false);
+        });
+    }, []);
+
+    if (carregando) return <p>Carregando produtos...</p>;
+    if (erro) return <p>{erro}</p>;
+
     return (
-        <section className="vitrine-grid">
-            {/* Fazendo o mapeamento do array e gerando a prop key obrigatória */}
-            {bancoDeProdutos.map((item) => (
-                <ProdutoCard key={item.id} produto={item} />
+        <section className="vitrine">
+            
+            {produtos.map((p) => (
+                <ProdutoCard key={p.id} produto={p} />
             ))}
         </section>
     );
