@@ -6,9 +6,11 @@ function Vitrine() {
     const [carregando, setCarregando] = useState(true);
     const [erro, setErro] = useState(null);
     const [busca, setBusca] = useState("");
+    const [categoria, setCategoria] = useState("laptops");
 
     useEffect(() => {
-        fetch("https://dummyjson.com/products/category/laptops")
+        setCarregando(true);        //ativando o carregamento
+        fetch(`https://dummyjson.com/products/category/${categoria}`)
         .then((res) => res.json())
         .then((dados) => {
             setProdutos(dados.products);
@@ -18,7 +20,7 @@ function Vitrine() {
             setErro("Não foi possível carregar os produtos.");
             setCarregando(false);
         });
-    }, []);
+    }, [categoria]);        //adicionei categoria como dependencia
 
         // TESTE A: useEffect com o array vazio []
     useEffect(() => {
@@ -40,22 +42,42 @@ function Vitrine() {
     );
 
     return (
-        <section>
-            <div>
+        <section className="vitrine-container">
+
+            <div className="filtros-secao">
+
+                <div className="filtro-grupo">
+                    <label htmlFor="categoria-select" className="filtro-laberl">
+                        Escollha a categoria:
+                    </label>
+                    <select
+                        id="categoria-select"
+                        className="select-categoria"
+                        value={categoria}
+                        onChange={(e) => setCategoria(e.target.value)}
+                    >
+                        <option value="laptops">💻 Notebooks</option>
+                        <option value="smartphones">📱 Celulares</option>
+                    </select>
+                </div>
+
+                {/*campo de busca */}
                 <input
                     type="text"
-                    placeholder="Busque um produto para testar o useEffect."
+                    className="campo-busca-vitrine"
+                    placeholder={`Busque em ${categoria}...`}
                     value={busca}
                     onChange={(e) => setBusca(e.target.value)}
                 />
             </div>
 
+            {/*lista dos cards*/}
             <div className="vitrine">
-            {/* mapeando os filtrados(produtos)*/}
-            {filtrados.map((p) => (
-                <ProdutoCard key={p.id} produto={p} />
-            ))}
+                {filtrados.map((p) => (
+                    <ProdutoCard key={p.id} produto={p} />
+                ))}
             </div>
+         
         </section>
     );
 }
