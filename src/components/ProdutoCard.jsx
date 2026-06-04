@@ -1,29 +1,21 @@
-import Botao from "./Botao";
-import Selo from "./Selo";
+import BotaoFavorito from "./BotaoFavorito";
 
 function ProdutoCard({ produto }) {
-    // Desestruturação do objeto produto para deixar o código limpo
-    const { nome, preco, imagem, freteGratis } = produto;
-
-    // Formatação recomendada para exibir o preço em Real (R$)
-    const precoFormatado = preco.toLocaleString("pt-BR", {
-        style: "currency",
-        currency: "BRL"
-    });
-
     return (
-        <article className="tech-card">
-            <div className="card-icone">{imagem}</div>
-            <h3 className="card-titulo">{nome}</h3>
-            <p className="card-preco">{precoFormatado}</p>
+        <div className="produto-card">
+            {/* Foto do produto que vem da API */}
+            <img src={produto.images[0]} alt={produto.title} />
+            {/* título do produto*/}
+            <h3>{produto.title}</h3>
+            {/* preço do produto*/ }
+            <p className="preco">R$ {produto.price}</p>
             
-            <div className="card-badge-area">
-                {/* Renderização condicional: o selo só aparece se for frete grátis */}
-                {freteGratis && <Selo texto="Entrega Grátis" estilo="sucesso" />}
-            </div>
+            {/* botão favritar*/}
+            <BotaoFavorito />
 
-            <Botao texto="Adicionar ao Carrinho" variante="sucesso" />
-        </article>
+            {/* botão comprar independente */}
+            <button className="botao-comprar">Comprar</button>  
+        </div>
     );
 }
 

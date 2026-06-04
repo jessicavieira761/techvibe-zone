@@ -7,7 +7,7 @@ function Vitrine() {
     const [erro, setErro] = useState(null);
 
     useEffect(() => {
-        fetch("https://dummyjson.com/products?limit=12")
+        fetch("https://dummyjson.com/products/category/laptops")
         .then((res) => res.json())
         .then((dados) => {
             setProdutos(dados.products);
