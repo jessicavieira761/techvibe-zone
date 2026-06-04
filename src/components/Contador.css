@@ -1,0 +1,36 @@
+.contador-container {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.contador-titulo {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.contador-numero {
+    font-size: 48px;
+    margin: 10px 0;
+    color: #6a1b9a;
+}
+
+.btn-contador {
+    font-size: 20px;
+    padding: 10px 0;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+}
+
+.btn-contador:hover {
+    background-color: #e0e0e0;
+}
+
+.btn-menos {
+    margin-right: 10px;
+}
