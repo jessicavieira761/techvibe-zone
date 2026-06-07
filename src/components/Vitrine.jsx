@@ -48,7 +48,7 @@ function Vitrine() {
 
                 <div className="filtro-grupo">
                     <label htmlFor="categoria-select" className="filtro-laberl">
-                        Escollha a categoria:
+                        Escolha a categoria:
                     </label>
                     <select
                         id="categoria-select"

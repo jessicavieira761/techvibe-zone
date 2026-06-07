@@ -1,18 +1,25 @@
-import Cabecalho from "./Cabecalho";
-import Rodape from "./Rodape";
+import React from "react";
+import "../App.css";
 
 function Layout({ children }) {
     return (
         <div className="layout-wrapper">
-            {/* Passamos o nome customizado da sua loja para o Cabeçalho via prop */}
-            <Cabecalho titulo="TechVibe Zone" />
+            <div className="conteudo-responsivo">
+                <header className="cabecalho-tech">
+                    <h1>TechVibe Zone</h1>
+                    <span className="subtitulo">Sua vitrine de hardware</span>
+                </header>
+
+                <main style={{ marginTop: "20px"}}>
+                    {children}
+                </main>
+            </div>
+
+            <footer className="rodape-tech">
+                <div>@ 2026 - Desenvovido por Jéssica Vieira</div>
+                <div className="creditos">IFES -Instituto Federal do Espírito Santo | TADS</div>
+            </footer>
             
-            {/* O "children" vai renderizar dinamicamente o que for colocado dentro do Layout */}
-            <main className="main-content">
-                {children}
-            </main>
-            
-            <Rodape />
         </div>
     );
 }
