@@ -2,19 +2,24 @@ import BotaoFavorito from "./BotaoFavorito";
 
 function ProdutoCard({ produto }) {
     return (
-        <div className="produto-card">
+        <div className="tech-card">
+            <div className="container-foto">
             {/* Foto do produto que vem da API */}
-            <img src={produto.images[0]} alt={produto.title} />
-            {/* título do produto*/}
-            <h3>{produto.title}</h3>
+            <img src={produto.thumbnail} alt={produto.title} />
+            </div>
+
+            {/* título do produto */}
+            <h3 className="card-titulo">{produto.title}</h3>
             {/* preço do produto*/ }
             <p className="preco">R$ {produto.price}</p>
             
-            {/* botão favritar*/}
+            {/* botão favoritar */}
+            <div className="card-badge-area">
             <BotaoFavorito />
+            </div>
 
             {/* botão comprar independente */}
-            <button className="botao-comprar">Comprar</button>  
+            <button className="btn-custom btn-sucesso">Comprar</button>  
         </div>
     );
 }

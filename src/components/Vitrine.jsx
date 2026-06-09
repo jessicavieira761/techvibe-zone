@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import ProdutoCard from "./ProdutoCard";
+import "./Vitrine.css";
 
 function Vitrine() {
     const [produtos, setProdutos] = useState([]);
@@ -47,8 +48,8 @@ function Vitrine() {
             <div className="filtros-secao">
 
                 <div className="filtro-grupo">
-                    <label htmlFor="categoria-select" className="filtro-laberl">
-                        Escolha a categoria:
+                    <label htmlFor="categoria-select" className="filtro-label">
+                        Categoria:
                     </label>
                     <select
                         id="categoria-select"
@@ -61,22 +62,26 @@ function Vitrine() {
                     </select>
                 </div>
 
-                {/*campo de busca */}
-                <input
-                    type="text"
-                    className="campo-busca-vitrine"
-                    placeholder={`Busque em ${categoria}...`}
-                    value={busca}
-                    onChange={(e) => setBusca(e.target.value)}
-                />
+                {/* campo de busca */}
+                <div className="busca-wrapper">
+                    <input
+                        type="text"
+                        className="campo-busca-vitrine"
+                        placeholder="Buscar..."
+                        value={busca}
+                        onChange={(e) => setBusca(e.target.value)}
+                    />
+                    <span className="icone-lupa">🔍</span>
+                </div>
             </div>
 
-            {/*lista dos cards*/}
-            <div className="vitrine">
+            {/* lista dos cards */}
+            <div className="vitrine-grid">
                 {filtrados.map((p) => (
                     <ProdutoCard key={p.id} produto={p} />
                 ))}
             </div>
+            
          
         </section>
     );

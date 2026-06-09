@@ -11,7 +11,7 @@ function Contador() {
 
             <h1 className="contador-numero">{valor}</h1>
 
-            // coloquei o setValor dentro do onClick usando uma arrow function
+            {/* coloquei o setValor dentro do onClick usando uma arrow function */}
             <button
                 className="btn-contador btn-menos"
                 onClick={() => setValor(valor -1)}

@@ -4,8 +4,11 @@ function BotaoFavorito() {
     const [favorito, setFavorito] = useState(false);
 
     return (
-        <button onClick={() => setFavorito(!favorito)}>
-            {favorito ? "♥ Favorito" : "♡ Favoritar"}
+        <button 
+            className={`btn-favoritar ${favorito ? "ativo" : "neutro"}`}
+            onClick={() => setFavorito(!favorito)}
+        >
+            {favorito ? "♥ Favoritado" : "♡ Favoritar"}
         </button>
     );
 }

@@ -49,9 +49,24 @@ body {
 /* Vitrine Grid */
 .vitrine-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 24px;
   flex-grow: 1;
+}
+
+.container-foto {
+  width: 100%;
+  height: 160px; /*para manter as fotos allinhadas na mesma altura */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.container-foto img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* para a foto do produto não esticar */
 }
 
 /*Reduzi para 1 coluna só se abrir no celular*/
@@ -100,6 +115,41 @@ body {
 .card-badge-area {
   min-height: 30px;
   margin-bottom: 15px;
+}
+
+.btn-favoritar {
+  background: none;
+  border: 1px solid #cbd5e1;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+  white-space: nowrap;  /* impede o texto de quebrar em duas linhas */
+}
+
+.btn-favoritar.neutro:hover {
+  border-color: #f43f5e;
+  color: #f43f5e;
+  background-color: #fff1f2;
+}
+
+.btn-favoritar.ativo {
+  color: #ffffff !important;
+  background-color: #f43f5e !important;
+   border-color: #f43f5e !important;
+  box-shadow: 0 4px 12px rgba(244, 63, 94, 0.2);
+}
+
+.btn-favoritar.ativo:hover {
+  background-color: #e11d48 !important;
+  border-color: #e11d48 !important;
 }
 
 /* Peça de UI: Selo */
