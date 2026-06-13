@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";    //importa o Link
 import "../App.css";
 
 function Layout({ children }) {
@@ -8,6 +9,13 @@ function Layout({ children }) {
                 <header className="cabecalho-tech">
                     <h1>TechVibe Zone</h1>
                     <span className="subtitulo">Sua vitrine de hardware</span>
+
+                    {/* menu de navegação */}
+                    <nav style={{marginTop: "10px"}}>
+                        <Link to="/" style={{marginRight: "15px"}}>Home</Link>
+                        <Link to="/sobre" style={{marginRight: "15px"}}>Sobre</Link>
+                        <Link to="/vitrine" style={{marginRight: "15px"}}>Vitrine</Link>
+                    </nav>
                 </header>
 
                 <main style={{ marginTop: "20px"}}>
