@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import ProdutoCard from "./ProdutoCard";
+import ProdutoCard from "../components/ProdutoCard";
 import "./Vitrine.css";
 
 function Vitrine() {

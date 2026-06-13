@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Detalhe from "./pages/Detalhe";
 import NaoEncontrado from "./pages/NaoEncontrado";
 import Sobre from "./pages/Sobre";
-import Vitrine from "./components/Vitrine";
+import Vitrine from "./pages/Vitrine";
 import Contador from "./components/Contador";
 import TextoTempoRreal from "./components/TextoTempoReal";
 import "./App.css";
@@ -15,6 +15,7 @@ function App() {
            <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/sobre" element={<Sobre />} />
+            <Route path="/vitrine" element={<Vitrine />} />
             <Route path="/produto/:id" element={<Detalhe />} />
             <Route path="*" element={<NaoEncontrado />} />
            </Routes>
