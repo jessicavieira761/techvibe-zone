@@ -1,13 +1,21 @@
+import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
+import Home from "./pages/Home";
+import Detalhe from "./pages/Detalhe";
+import NaoEncontrado from "./pages/NaoEncontrado";
 import Vitrine from "./components/Vitrine";
-import "./App.css";
 import Contador from "./components/Contador";
 import TextoTempoRreal from "./components/TextoTempoReal";
+import "./App.css";
 
 function App() {
     return (
         <Layout>
-            <Vitrine />
+           <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/produto/:id" element={<Detalhe />} />
+            <Route path="*" element={<NaoEncontrado />} />
+           </Routes>
         </Layout>
     );
 }

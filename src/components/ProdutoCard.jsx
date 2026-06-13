@@ -1,4 +1,5 @@
 import BotaoFavorito from "./BotaoFavorito";
+import { Link } from "react-router-dom";
 
 function ProdutoCard({ produto }) {
     return (
@@ -19,7 +20,12 @@ function ProdutoCard({ produto }) {
             </div>
 
             {/* botão comprar independente */}
-            <button className="btn-custom btn-sucesso">Comprar</button>  
+            <button className="btn-custom btn-sucesso">Comprar</button> 
+
+            {/* link para detallhes */} 
+            <Link to={`/produto/${produto.id}`} className="btn-custom btn-detalhes">
+                Ver detalhes
+            </Link>
         </div>
     );
 }
