@@ -27,7 +27,7 @@ body {
 .cabecalho-tech {
   text-align: center;
   padding: 30px 0;
-  border-bottom: 2px solid #1f1a3a;
+  /*border-bottom: 2px solid #1f1a3a;*/
   margin-bottom: 40px;
 }
 
@@ -207,4 +207,15 @@ body {
 .creditos {
   margin-top: 6px;
   color: #64748b;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #0f172a;
+}
+nav a.active {
+  font-weight: bold;
+  color: #a855f7;
+  text-decoration: underline;
 }

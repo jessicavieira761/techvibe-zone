@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+
 
 function Detalhe() {
     const { id } = useParams();   // pega o :id da URL
@@ -15,15 +16,18 @@ function Detalhe() {
             });
     }, [id]); // re-busca se o id mudar
 
-    if (carregando) return <p>Carregando...</p>;
+    if (carregando) return <p>Carregando detalhes do produto...</p>;
+    if (!produto) return <p>Produto não encontrado.</p>
 
     return (
         <article className="detalhe">
-            <Link to="/">← Voltar</Link>
             <h1>{produto.title}</h1>
             <img src={produto.thumbnail} alt={produto.title} />
-            <p>R$ {produto.description}</p>
+            <p>{produto.description}</p>
+            <p>Marca: {produto.brand}</p>
+            <p>Avaliação: {produto.rating} ⭐</p>
             <p className="preco">R$ {produto.price}</p>
+            <Link to="/">← Voltar</Link>
         </article>
     );
 }
