@@ -23,17 +23,7 @@ function Vitrine() {
             });
     }, [categoria]);        //adicionei categoria como dependencia
 
-        // TESTE A: useEffect com o array vazio []
-    useEffect(() => {
-        console.log("%c[useEffect []] Fui disparado apenas UMA vez (quando a vitrine nasceu)!", "color: #3498db; font-weight: bold;");
-    }, []);
-
-    // TESTE B: useEffect com a dependência [busca]
-    useEffect(() => {
-        console.log(`%c[useEffect [busca]] Fui disparado! O texto atual da busca é: "${busca}"`, "color: #e67e22; font-weight: bold;");
-    }, [busca]);
-
-    // if de carregamento e erro vem depois de todos os hooks!
+    // if de carregamento e erro antes do retorno principal!
     if(carregando) return <p>Carregando produtos...</p>;
     if(erro) return <p>{erro}</p>;
 
@@ -75,14 +65,12 @@ function Vitrine() {
                 </div>
             </div>
 
-            {/* lista dos cards */}
+            {/* grid de renderização dos cards */}
             <div className="vitrine-grid">
                 {filtrados.map((p) => (
                     <ProdutoCard key={p.id} produto={p} />
                 ))}
-            </div>
-            
-         
+            </div> 
         </section>
     );
 }

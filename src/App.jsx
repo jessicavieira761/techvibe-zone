@@ -6,8 +6,7 @@ import Home from "./pages/Home";
 import Detalhe from "./pages/Detalhe";
 import NaoEncontrado from "./pages/NaoEncontrado";
 import Sobre from "./pages/Sobre";
-import Contador from "./components/Contador";
-import TextoTempoRreal from "./components/TextoTempoReal";
+
 import Login from "./pages/Login";
 import RotaPrivada from "./components/RotaPrivada";
 import MinhaConta from "./pages/MinhaConta";
