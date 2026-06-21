@@ -1,22 +1,26 @@
-import { NavLink } from "react-router-dom";    //importa o Link
 import React from "react";
+import { NavLink } from "react-router-dom";    //importa o Link
+import { useAuth } from "./contexts/AuthContext";
+import Cabecalho from "./Cabecalho";
+
 import "../App.css";
 
 function Layout({ children }) {
+    const { logado, sair} = useAuth();
+
     return (
         <div className="layout-wrapper">
             <div className="conteudo-responsivo">
-                <header className="cabecalho-tech">
-                    <h1>TechVibe Zone</h1>
-                    <span className="subtitulo">Sua vitrine de hardware</span>  
 
-                    {/* menu de navegação */}
-                    <nav style={{marginTop: "10px"}}>
-                        <NavLink to="/" end>Home</NavLink>
-                        <NavLink to="/sobre">Sobre</NavLink>
-                        <NavLink to="/vitrine">Vitrine</NavLink>
-                    </nav>
-                </header>
+                <Cabecalho titulo="TechVibe Zone" /> 
+
+                {/* menu de navegação */}
+                <nav>
+                    <NavLink to="/" end>Home</NavLink>
+                    <NavLink to="/sobre">Sobre</NavLink>
+                    <NavLink to="/vitrine">Vitrine</NavLink>
+                    {logado && <NavLink to="/minha-conta">Minha Conta</NavLink>}
+                </nav>
 
                 <main>
                     {children}

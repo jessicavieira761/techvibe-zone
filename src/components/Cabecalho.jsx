@@ -5,7 +5,8 @@ import { useAuth } from "./contexts/AuthContext";
 function Cabecalho({ titulo }) {
     //controle de visualização
     const { logado, sair } = useAuth();
-
+    const navigate = useNavigate();
+    
     return (
         <header className="cabecalho-tech">
             <div className="logo-area">
