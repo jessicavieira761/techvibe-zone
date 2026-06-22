@@ -38,6 +38,30 @@ body {
   letter-spacing: 1.5px;
   text-shadow: 0 0 10px rgba(168, 85, 247, 0.2);
 }
+.auth-area {
+  margin-top: 20px;
+  display: block; 
+  position: relative; /* ele fica na camada da frente para receber o clique */
+  z-index: 10;
+}
+
+.btn-auth {
+    display: inline-block;
+    text-decoration: none; /* Tira o sublinhado do Link */
+    padding: 8px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #9b5de5;
+    color: white;
+    transition: background-color 0.2s, transform 0.1s; /* Transição suave */
+}
+.btn-auth:hover {
+    background-color: #8247c9;
+    filter: brightness(0.9); /* efeito visual quando o mouse passa em cima */
+}
+
 
 .subtitulo {
   color: #94a3b8;
@@ -65,8 +89,11 @@ body {
 
 .container-foto img {
   max-width: 100%;
-  max-height: 100%;
+  height: auto;
+  max-height: 750px;
   object-fit: contain; /* para a foto do produto não esticar */
+  display: block;
+  margin: 0 auto 20px auto;
 }
 
 /*Reduzi para 1 coluna só se abrir no celular*/
@@ -218,4 +245,74 @@ nav a.active {
   font-weight: bold;
   color: #a855f7;
   text-decoration: underline;
+}
+
+/* Centraliza o formulário na página */
+form {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 35px;
+  width: 100%;
+  max-width: 360px;
+  margin: 40px auto; 
+  box-shadow: 0 10px 25px rgba(155, 93, 229, 0.05); 
+  display: flex;
+  flex-direction: column;
+  gap: 18px; /*  Afasta verticalmente cada elemento/input dentro do form  */
+}
+
+/* Estilização padrão para todos os campos de texto e senha */
+form input[type="text"],
+form input[type="password"] {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #cbd5e1; 
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #ffffff;
+  color: #0f172a;
+  outline: none;
+  box-sizing: border-box; /* Impede que o padding quebre a largura */
+  transition: all 0.2s ease-in-out;
+}
+
+/* Efeito ao clicar no campo de texto */
+form input[type="text"]:focus,
+form input[type="password"]:focus {
+  border-color: #a855f7; 
+  box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.15); 
+}
+
+/* Estilização do botão interno do formulário */
+form button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #7c3aed; 
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  margin-top: 10px;
+}
+
+/* Efeitos do botão do formulário */
+form button[type="submit"]:hover {
+  background-color: #6d28d9; 
+}
+
+form button[type="submit"]:active {
+  transform: scale(0.98); /* Efeito físico de clique esmagado */
+}
+
+/* Texto de erro de credenciais */
+form p {
+  color: #ef4444;
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
 }

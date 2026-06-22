@@ -1,12 +1,33 @@
+import React from "react";
+
 function Sobre() {
   return (
-    <section>
-      <h1>Sobre a TechVibe Zone</h1>
-      <p>
-        A TechVibe Zone é uma vitrine de hardware criada para mostrar produtos,
-        detalhes e novidades do mundo da tecnologia.
-      </p>
-    </section>
+    <div className="sobre-container">
+      <section className="sobre-hero">
+        <h2>Sobre a TechVibe Zone</h2>
+        <p>
+          A TechVibe Zone é a sua vitrine digital especializada em tecnologia de ponta. 
+          Nossa curadoria é focada em selecionar os melhores smartphones e notebooks do mercado, 
+          garantindo que você encontre desde dispositivos ideais para o trabalho e estudos 
+          até máquinas potentes para o público gamer e profissional.
+        </p>
+      </section>
+
+      <div className="sobre-valores">
+        <div className="valor-card">
+          <h3> Smartphones</h3>
+          <p>Dos modelos mais eficientes para o dia a dia aos flagships com câmeras e processadores revolucionários.</p> 
+        </div>
+        <div className="valor-card">
+          <h3>Notebooks</h3>
+          <p>Máquinas portáteis selecionadas para máxima produtividade, design ultrafino ou performance extrema em jogos.</p>
+        </div>
+        <div className="valor-card">
+          <h3>Tecnologias</h3>
+          <p>Foco total em hardware atualizado, conectividade rápida e especificações técnicas de verdade.</p>
+        </div>
+      </div>
+    </div>
   );
 }
 

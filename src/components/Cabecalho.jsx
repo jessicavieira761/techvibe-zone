@@ -1,12 +1,11 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAuth } from "./contexts/AuthContext";
 
 function Cabecalho({ titulo }) {
     //controle de visualização
     const { logado, sair } = useAuth();
-    const navigate = useNavigate();
-    
+
     return (
         <header className="cabecalho-tech">
             <div className="logo-area">
@@ -18,7 +17,8 @@ function Cabecalho({ titulo }) {
                 {logado ? (
                     <button onClick={sair} className="btn-auth">Sair</button>
                 ) : (
-                    <button onClick={() => Navigate('/login')} className="btn-auth">Entrar</button>
+                    
+                    <Link to="/login" className="btn-auth">Entrar</Link>
                 )}
             </div>
         </header>

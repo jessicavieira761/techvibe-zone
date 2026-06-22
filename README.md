@@ -1,79 +1,103 @@
 # 🚀 TechVibe Zone — Vitrine de Hardware
 
-Seja bem-vindo(a) ao repositório da **TechVibe Zone**, uma aplicação web interativa desenvolvida em **React** e **Vite**. Este projeto é uma vitrine virtual de produtos de tecnologia e hardware criada como parte dos critérios de avaliação do curso de **Análise e Desenvolvimento de Sistemas (ADS)** do **IFES - Instituto Federal do Espírito Santo**.
+Seja bem-vindo(a) ao repositório da **TechVibe Zone**, uma aplicação web interativa desenvolvida em **React** e **Vite**. Este projeto é uma vitrine virtual especializada em smartphones de última geração e notebooks de alta performance, criada como parte dos critérios de avaliação do curso de **Análise e Desenvolvimento de Sistemas (ADS)** do **IFES - Instituto Federal do Espírito Santo (Campus Ibatiba)**.
 
-Este projeto será evoluído de forma incremental ao longo das próximas semanas letivas.
+A aplicação utiliza conceitos modernos de arquitetura SPA (Single Page Application), gerenciamento de estado global e consumo de APIs REST de mercado.
 
 ---
 
-## 📌 Etapa 1: Estrutura Base e Componentização (Concluída)
+## ⚙️ Funcionalidades e Etapas do Projeto
 
-Nesta primeira fase, o foco principal foi a criação da fundação da interface utilizando os conceitos essenciais do ecossistema React, garantindo um design exclusivo e componentização modular.
-
-### 🛠️ Requisitos Técnicos Implementados:
-* **Criação do Projeto**: Estruturado do zero utilizando o instalador oficial do `Vite` com `React`.
+### 📌 Etapa 1 ao 3: Estrutura Base, Componentização e Rotas
 * **Componentização Avançada**: Divisão da interface em múltiplos componentes reaproveitáveis e isolados na pasta `src/components`.
-* **Uso de Props**: Passagem de dados customizados dinamicamente entre componentes (como o título da loja enviado ao cabeçalho).
-* **Propriedade `children`**: Implementação obrigatória do componente `Layout.jsx` encapsulando os elementos centrais do site.
-* **Renderização de Listas**: Mapeamento (`.map`) de um array exclusivo com mais de 4 produtos estruturados em formato de dados.
-* **Renderização Condicional**: Exibição seletiva do selo de *"Entrega Grátis"* baseado nas propriedades lógicas de cada produto.
-* **Estilização Exclusiva**: Identidade visual autoral voltada para o tema claro com detalhes em roxo e rodapé contrastante, totalmente responsivo para dispositivos móveis.
+* **Propriedade `children`**: Implementação do componente `Layout.jsx` encapsulando os elementos centrais e a navegação do site.
+* **Sistema de Rotas (`react-router-dom`)**: Navegação fluida entre a página Principal (**Home**), a institucional (**Sobre**) e o fluxo de autenticação.
+* **Página de Detalhes**: Exibição individualizada das especificações de cada smartphone ou notebook, utilizando parâmetros de rota dinâmica (`/produto/:id`).
+* **Estilização Autoral**: Identidade visual moderna em tons de roxo, totalmente responsiva e customizada com CSS puro (Flexbox e Grid Layout).
+
+### 🔑 Etapa 4: Estado Global, Autenticação Avançada e Bônus
+* **Gerenciamento de Estado Global (Context API)**: Criação do `AuthContext` (o "quadro de avisos" do app) para centralizar e distribuir os dados da sessão do usuário.
+* **Consumo de API Real (BÔNUS IMPLEMENTADO 🏆)**: Substituição do login estático por uma integração assíncrona real (`POST /auth/login`) consumindo os servidores da **DummyJSON**.
+* **Persistência de Sessão**: Utilização do `localStorage` para ler e salvar os tokens de autenticação, mantendo o usuário conectado mesmo após recarregar a página (`F5`).
+* **Rotas Protegidas (`RotaPrivada.jsx`)**: Bloqueio de segurança que impede o acesso à página de **Minha Conta** por usuários não autenticados, redirecionando-os automaticamente para o Login.
+* **Interface Dinâmica**: O botão do cabeçalho alterna dinamicamente entre "Entrar" e "Sair" com base no estado global da aplicação.
 
 ---
 
-## 📂 Estrutura de Arquivos
+## 🔑 Credenciais de Teste (Para o Professor)
 
-A organização interna do código segue rigorosamente o padrão modular exigido para a arquitetura do projeto:
+Para avaliar o fluxo de login real integrado à API da DummyJSON e pontuar os critérios de bônus, utilize a conta de testes oficial abaixo:
+
+* **Usuário:** `emilys`
+* **Senha:** `emilyspass`
+
+> ⚠️ **Nota:** O sistema faz a validação direta no servidor externo. Caso digite dados incorretos, o formulário exibirá na tela a mensagem de erro retornada pela própria API.
+
+---
+
+## 📂 Estrutura de Arquivos Atualizada
+
+A organização interna do código segue estritamente o padrão estrutural e modular para a arquitetura React:
 
 ```text
 techvibe-zone/
 ├── src/
 │   ├── components/
-│   │   ├── Botao.jsx
+│   │   ├── contexts/
+│   │   │   └── AuthContext.jsx
 │   │   ├── Cabecalho.jsx
 │   │   ├── Layout.jsx
 │   │   ├── ProdutoCard.jsx
 │   │   ├── Rodape.jsx
-│   │   ├── Selo.jsx
-│   │   └── Vitrine.jsx
+│   │   ├── RotaPrivada.jsx
+│   │   └── Selo.jsx
+│   ├── pages/
+│   │   ├── Detalhe.jsx
+│   │   ├── Home.jsx
+│   │   ├── Login.jsx
+│   │   ├── MinhaConta.jsx
+│   │   ├── NaoEncontrado.jsx
+│   │   └── Sobre.jsx
 │   ├── App.css
 │   ├── App.jsx
 │   └── main.jsx
 ├── index.html
 └── README.md
-```
 
 ## 💻 Tecnologias Utilizadas
-* **React** (Biblioteca Javascript para construção de interfaces)
+**React 18** (Biblioteca Javascript baseada em componentes para interfaces SPA)
 
-* **Vite** (Build tool e servidor de desenvolvimento ultra veloz)
+**Vite** (Build tool e servidor de desenvolvimento ultra veloz)
 
-* **HTML5 & CSS3** (Estruturação de Grid Layout e Flexbox responsivos)
+**React Router Dom v6** (Gerenciamento de rotas e navegação interna)
 
-* **Git & GitHub** (Controle de versão e hospedagem do código)
+**DummyJSON API** (Serviço REST externo para simulação de autenticação via Token JWT)
 
----
+**HTML5 & CSS3** (Estruturação semântica e estilização responsiva com Flexbox/Grid)
+
+**Git & GitHub** (Controle de versão e hospedagem do código)
 
 ## 🚀 Como Executar o Projeto Localmente
 Caso queira clonar este repositório e rodar a aplicação em sua máquina:
 
-* **1.Clone o repositório:**
-git clone [https://github.com/SEU_USUARIO_DO_GITHUB/techvibe-zone.git](https://github.com/SEU_USUARIO_DO_GITHUB/techvibe-zone.git)
+**1. Clone o repositório:**
+git clone [https://github.com/jessicavieira761/techvibe-zone]
 
-* **2.Acesse a pasta do projeto:**
+**2.Acesse a pasta do projeto:**
+
 cd techvibe-zone
 
-* **3.Instale as dependências necessárias:**
-nmp install
+**3.Instale as dependências necessárias:**
+npm install
 
-* **4.Inicie o servidor de desenvolvimento local:**
+**4.Inicie o servidor de desenvolvimento local:**
 npm run dev
 
-* **4.Abra o link** gerado no terminal (geralmente http://localhost:5173/) no seu navegador.
+**5.Abra o link gerado no terminal** (geralmente http://localhost:5173/) no seu navegador.
 
 ## 👩‍💻 Desenvolvedora
-* **Nome:** Jéssica Vieira
+**Nome:** Jéssica Vieira
 
-* **Curso:** Superior de Tecnologia em Análise e Desenvolvimento de Sistemas (TADS)
+**Curso:** Superior de Tecnologia em Análise e Desenvolvimento de Sistemas (TADS)
 
-* **Instituição:** Instituto Federal de Educação, Ciência e Tecnologia do Espírito Santo (IFES)
+**Instituição:** Instituto Federal de Educação, Ciência e Tecnologia do Espírito Santo (IFES - Campus Ibatiba)

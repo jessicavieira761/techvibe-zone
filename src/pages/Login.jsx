@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React,  { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../components/contexts/AuthContext";
 
@@ -9,28 +9,50 @@ function Login() {
     const { entrar } = useAuth();
     const navegar = useNavigate();
 
-    function aoEnviar(e) {
+    async function aoEnviar(e) {
         e.preventDefault();
-        // login SIMULADO: usuário e senha fixos
-        if (usuario === "aluno" && senha === "1234") {
-            entrar();
+        setErro("");        //limpa erros antes de tentar
+
+        const resultado = await entrar(usuario, senha);
+        
+        if (resultado.sucesso) {
+            
             navegar("/minha-conta");
         } else {
-            setErro("Usuário ou senha inválidos.");
+            setErro(resultado.mensagem);
         }
     }
 
     return (
-        <form onSubmit={aoEnviar}>
-            <input value={usuario}
-                onChange={(e) => setUsuario(e.target.value)}
-                placeholder="Usuário" />
-            <input type="password" value={senha}
-                onChange={(e) => setSenha(e.target.value)}
-                placeholder="Senha" />
-            {erro && <p>{erro}</p>}
-            <button type="submit">Entrar</button>
-        </form>
+        <div className="login-container">
+            <form onSubmit={aoEnviar} className="login-form">
+                <h2>Acesse sua Conta</h2>
+
+                <div className="form-grupo">
+                    <label htmlFor="usuario">Usuário</label>
+                    <input 
+                        id="usuario"
+                        type="text"
+                        value={usuario}
+                        onChange={(e) => setUsuario(e.target.value)}
+                        placeholder="Usuário" />
+                </div>
+                <div className="form-grupo">
+                    <label htmlFor="senha">Senha</label>
+                    <input 
+                        id="senha"
+                        type="password" 
+                        value={senha}
+                        onChange={(e) => setSenha(e.target.value)}
+                        placeholder="Senha" />
+                </div>
+
+                {erro && <p>{erro}</p>}
+
+                <button type="submit" className="btn-sucesso">Entrar</button>
+            </form>
+        
+        </div>
     );
 }
 

@@ -18,7 +18,7 @@ function Layout({ children }) {
                 <nav>
                     <NavLink to="/" end>Home</NavLink>
                     <NavLink to="/sobre">Sobre</NavLink>
-                    <NavLink to="/vitrine">Vitrine</NavLink>
+                    
                     {logado && <NavLink to="/minha-conta">Minha Conta</NavLink>}
                 </nav>
 
