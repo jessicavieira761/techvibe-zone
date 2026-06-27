@@ -135,20 +135,6 @@ body {
   margin-bottom: 15px;
 }
 
-/* Peça de UI: Selo */
-.selo-custom-tag {
-  font-size: 0.75rem;
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-weight: 600;
-}
-
-.selo-sucesso {
-  background-color: rgba(74, 222, 128, 0.1);
-  color: #4ade80;
-  border: 1px solid rgba(74, 222, 128, 0.3);
-}
-
 /* Peça de UI: Botão customizado */
 .btn-custom {
   display: block;

@@ -50,7 +50,7 @@ techvibe-zone/
 │   │   ├── ProdutoCard.jsx
 │   │   ├── Rodape.jsx
 │   │   ├── RotaPrivada.jsx
-│   │   └── Selo.jsx
+│   │   
 │   ├── pages/
 │   │   ├── Detalhe.jsx
 │   │   ├── Home.jsx

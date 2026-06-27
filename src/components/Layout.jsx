@@ -14,7 +14,6 @@ function Layout({ children }) {
 
                 <Cabecalho titulo="TechVibe Zone" /> 
 
-                {/* menu de navegação */}
                 <nav>
                     <NavLink to="/" end>Home</NavLink>
                     <NavLink to="/sobre">Sobre</NavLink>

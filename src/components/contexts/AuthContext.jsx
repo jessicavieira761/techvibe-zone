@@ -14,8 +14,8 @@ export function AuthProvider({ children }) {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json'},
                 body: JSON.stringify({
-                    username: username,     //'emilys'
-                    password: password,     //emilypass
+                    username: username,     
+                    password: password,     
                 })
             });
 
