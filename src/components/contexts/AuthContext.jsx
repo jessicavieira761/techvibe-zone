@@ -24,7 +24,7 @@ export function AuthProvider({ children }) {
                 const dados = await resposta.json();
 
                 // salvando o token que vem da API
-                localStorage.setItem("usuario_logado", "true");
+                localStorage.setItem("logado", "true");
                 localStorage.setItem("token", dados.accessToken);
 
                 setLogado(true);
@@ -42,6 +42,7 @@ export function AuthProvider({ children }) {
     function sair() {
         setLogado(false);
         localStorage.removeItem("logado");
+        localStorage.removeItem("token");
     }
 
     return (
