@@ -358,7 +358,7 @@ form input.input-com-erro:focus {
   flex-wrap: wrap; /* Garante que fique responsivo em telas menores */
 }
 
-/* OS CARDS INDIVIDUAIS */
+/*  CARDS INDIVIDUAIS */
 .card-pilar {
   flex: 1;
   min-width: 250px; /* Não deixa esmagar no mobile */
@@ -371,7 +371,6 @@ form input.input-com-erro:focus {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Efeito sutil ao passar o mouse por cima do card */
 .card-pilar:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(168, 85, 247, 0.08);
@@ -394,4 +393,92 @@ form input.input-com-erro:focus {
   line-height: 1.5;
   color: #64748b;
   margin: 0;
+}
+
+/* CONTAINER DO PAINEL DO USUÁRIO */
+.container-painel {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* CARD DE PERFIL PRINCIPAL */
+.card-perfil {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 35px;
+  box-shadow: 0 10px 25px rgba(155, 93, 229, 0.03);
+}
+
+.avatar-usuario {
+  font-size: 3rem;
+  background-color: #f3e8ff; 
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; 
+  border: 2px solid #a855f7;
+}
+
+.info-perfil h2 {
+  font-size: 1.8rem;
+  color: #1e293b;
+  margin: 0 0 5px 0;
+}
+
+.info-perfil p {
+  font-size: 1.05rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* GRID DE ATALHOS DO DASHBOARD */
+.grid-atalhos-painel {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card-atalho {
+  flex: 1;
+  min-width: 250px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.01);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.card-atalho:hover {
+  transform: translateY(-3px);
+  border-color: #a855f7;
+  box-shadow: 0 8px 20px rgba(168, 85, 247, 0.06);
+}
+
+.icone-atalho {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.card-atalho h3 {
+  font-size: 1.2rem;
+  color: #1e293b;
+  margin: 0 0 8px 0;
+}
+
+.card-atalho p {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.4;
 }
