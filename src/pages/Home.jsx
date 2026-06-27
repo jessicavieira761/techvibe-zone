@@ -10,7 +10,7 @@ function Vitrine() {
     const [categoria, setCategoria] = useState("laptops");
 
     useEffect(() => {
-        setCarregando(true);        //ativando o carregamento
+        setCarregando(true);        //ativa o carregamento
         fetch(`https://dummyjson.com/products/category/${categoria}`)
             .then((res) => res.json())
             .then((dados) => {

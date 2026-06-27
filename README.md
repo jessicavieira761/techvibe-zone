@@ -1,6 +1,6 @@
 # 🚀 TechVibe Zone — Vitrine de Hardware
 
-Seja bem-vindo(a) ao repositório da **TechVibe Zone**, uma aplicação web interativa desenvolvida em **React** e **Vite**. Este projeto é uma vitrine virtual especializada em smartphones de última geração e notebooks de alta performance, criada como parte dos critérios de avaliação do curso de **Análise e Desenvolvimento de Sistemas (ADS)** do **IFES - Instituto Federal do Espírito Santo (Campus Ibatiba)**.
+Seja bem-vindo(a) ao repositório da **TechVibe Zone**, uma aplicação web interativa desenvolvida em **React** e **Vite**. Este projeto é uma vitrine virtual especializada em smartphones de última geração e notebooks de alta performance, criada como parte dos critérios de avaliação do curso de **Análise e Desenvolvimento de Sistemas (ADS)** do **IFES - Instituto Federal do Espírito Santo (Campus Alegre)**.
 
 A aplicação utiliza conceitos modernos de arquitetura SPA (Single Page Application), gerenciamento de estado global e consumo de APIs REST de mercado.
 
@@ -63,19 +63,22 @@ techvibe-zone/
 │   └── main.jsx
 ├── index.html
 └── README.md
+```
 
 ## 💻 Tecnologias Utilizadas
-**React 18** (Biblioteca Javascript baseada em componentes para interfaces SPA)
+* **React 18** (Biblioteca Javascript baseada em componentes para interfaces SPA)
 
-**Vite** (Build tool e servidor de desenvolvimento ultra veloz)
+* **Vite** (Build tool e servidor de desenvolvimento ultra veloz)
 
-**React Router Dom v6** (Gerenciamento de rotas e navegação interna)
+* **React Router Dom v6** (Gerenciamento de rotas e navegação interna)
 
-**DummyJSON API** (Serviço REST externo para simulação de autenticação via Token JWT)
+* **DummyJSON API** (Serviço REST externo para simulação de autenticação via Token JWT)
 
-**HTML5 & CSS3** (Estruturação semântica e estilização responsiva com Flexbox/Grid)
+* **HTML5 & CSS3** (Estruturação semântica e estilização responsiva com Flexbox/Grid)
 
-**Git & GitHub** (Controle de versão e hospedagem do código)
+* **Git & GitHub** (Controle de versão e hospedagem do código)
+
+---
 
 ## 🚀 Como Executar o Projeto Localmente
 Caso queira clonar este repositório e rodar a aplicação em sua máquina:
@@ -100,4 +103,4 @@ npm run dev
 
 **Curso:** Superior de Tecnologia em Análise e Desenvolvimento de Sistemas (TADS)
 
-**Instituição:** Instituto Federal de Educação, Ciência e Tecnologia do Espírito Santo (IFES - Campus Ibatiba)
+**Instituição:** Instituto Federal de Educação, Ciência e Tecnologia do Espírito Santo (IFES - Campus Alegre)
