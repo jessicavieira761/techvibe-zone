@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";    //importa o Link
 import { useAuth } from "./contexts/AuthContext";
 import Cabecalho from "./Cabecalho";
-
+import Rodape from "./Rodape";
 import "../App.css";
 
 function Layout({ children }) {
@@ -27,10 +27,7 @@ function Layout({ children }) {
                 </main>
             </div>
 
-            <footer className="rodape-tech">
-                <div>@ 2026 - Desenvovido por Jéssica Vieira</div>
-                <div className="creditos">IFES -Instituto Federal do Espírito Santo | TADS</div>
-            </footer>
+            <Rodape />
             
         </div>
     );

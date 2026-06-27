@@ -1,6 +1,7 @@
 import React,  { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../components/contexts/AuthContext";
+import Botao from "../components/Botao";
 
 function Login() {
     const [usuario, setUsuario] = useState("");
@@ -49,7 +50,7 @@ function Login() {
 
                 {erro && <p>{erro}</p>}
 
-                <button type="submit" className="btn-sucesso">Entrar</button>
+                <Botao type="submit" texto="Entrar" variante="primario" />
             </form>
         
         </div>
