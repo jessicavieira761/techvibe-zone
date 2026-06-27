@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import Botao from "./Botao";
 
 function ProdutoCard({ produto }) {
+    const lidarComCompra = () => {
+        alert(` ${produto.title} foi adicionado ao carrinho com sucesso!`);
+    };
+
     return (
         <div className="tech-card">
             <div className="container-foto">
@@ -20,12 +24,19 @@ function ProdutoCard({ produto }) {
             <BotaoFavorito />
             </div>
 
-            {/* botão comprar independente */}
-            <Botao texto="Comprar" variante="primario" /> 
+            {/* botão comprar dispara uma ação real */}
+            <Botao
+                texto="Comprar" 
+                variante="primario"
+                onClick={lidarComCompra}
+            /> 
 
             {/* link para detallhes */} 
             <Link to={`/produto/${produto.id}`} >
-                <Botao texto="Ver detalhes" variante="secundario" />
+                <Botao
+                    texto="Ver detalhes" 
+                    variante="secundario"
+                />
             </Link>
         </div>
     );

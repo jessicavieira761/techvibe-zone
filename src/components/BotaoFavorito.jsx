@@ -3,12 +3,17 @@ import { useState } from "react";
 function BotaoFavorito() {
     const [favorito, setFavorito] = useState(false);
 
+    const alternarFavorito = () => {
+        setFavorito(!favorito);
+    };
+
     return (
         <button 
-            className={`btn-favoritar ${favorito ? "ativo" : "neutro"}`}
-            onClick={() => setFavorito(!favorito)}
+            className={`btn-favorito-custom ${favorito ? "is-favorito" : ""}`}
+            onClick={alternarFavorito}
         >
-            {favorito ? "♥ Favoritado" : "♡ Favoritar"}
+            <span>{favorito ? "♥" : "♡"}</span>
+            {favorito ? "Favorito" : "Favoritar"}      
         </button>
     );
 }

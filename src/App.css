@@ -1,4 +1,3 @@
-/* Customização Global de Cores */
 body {
   background-color: #f8fafc;
   color: #0f172a;
@@ -62,7 +61,6 @@ body {
     filter: brightness(0.9); /* efeito visual quando o mouse passa em cima */
 }
 
-
 .subtitulo {
   color: #94a3b8;
   font-size: 0.95rem;
@@ -96,7 +94,7 @@ body {
   margin: 0 auto 20px auto;
 }
 
-/*Reduzi para 1 coluna só se abrir no celular*/
+/*Reduz para 1 coluna só se abrir no celular*/
 @media (max-width: 600px) {
   .vitrine-grid {
     grid-template-columns: 1fr;
@@ -132,51 +130,9 @@ body {
   margin: 0 0 10px 0;
 }
 
-.card-preco {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #16a34a;
-  margin: 0 0 15px 0;
-}
-
 .card-badge-area {
   min-height: 30px;
   margin-bottom: 15px;
-}
-
-.btn-favoritar {
-  background: none;
-  border: 1px solid #cbd5e1;
-  padding: 6px 12px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  border-radius: 20px;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  transition: all 0.2s ease-in-out;
-  width: 100%;
-  white-space: nowrap;  /* impede o texto de quebrar em duas linhas */
-}
-
-.btn-favoritar.neutro:hover {
-  border-color: #f43f5e;
-  color: #f43f5e;
-  background-color: #fff1f2;
-}
-
-.btn-favoritar.ativo {
-  color: #ffffff !important;
-  background-color: #f43f5e !important;
-   border-color: #f43f5e !important;
-  box-shadow: 0 4px 12px rgba(244, 63, 94, 0.2);
-}
-
-.btn-favoritar.ativo:hover {
-  background-color: #e11d48 !important;
-  border-color: #e11d48 !important;
 }
 
 /* Peça de UI: Selo */
@@ -195,26 +151,38 @@ body {
 
 /* Peça de UI: Botão customizado */
 .btn-custom {
+  display: block;
   width: 100%;
-  padding: 12px;
+  padding: 10px;
+  margin: 8px 0;
   border-radius: 8px;
   border: none;
-  font-weight: 600;
+  font-weight: bold;
   cursor: pointer;
-  transition: background 0.2s;
+  text-align: center;
+  transition: background 0.3s;
+  box-sizing: border-box;
 }
 
-.btn-sucesso {
-  background-color: #7c3aed;
+.btn-custom:active {
+  transform: scale(0.98); /* Aplica o efeito físico de clique esmagado para TODOS os botões */
+}
+
+.btn-primario {
+  background-color: #8b5cf6;
   color: #ffffff;
 }
-
-.btn-sucesso:hover {
-  background-color: #6d28d9;
+.btn-primario:hover {
+  background-color: #7c3aed;
 }
 
-.btn-sucesso:active {
-  transform: scale3d(0.98);
+.btn-secundario {
+  background-color: transparent;
+  color: #8b5cf6;
+  border: 2px solid #8b5cf6;
+}
+.btn-secundario:hover {
+  background-color: #f5f3ff; /* Um roxo bem clarinho ao passar o mouse */
 }
 
 /* Rodapé */
@@ -223,9 +191,7 @@ body {
   padding: 40px 20px;
   background-color: #1e293b;
   width: 100%;
-  border-radius: 0;
   border: 1px solid #334155;
-  margin: 0;
   text-align: center;
   color: #94a3b8;
   font-size: 0.88rem;
@@ -247,7 +213,7 @@ nav a.active {
   text-decoration: underline;
 }
 
-/* Centraliza o formulário na página */
+/* formulário de login */
 form {
   background: #ffffff;
   border: 1px solid #e2e8f0;
@@ -259,60 +225,173 @@ form {
   box-shadow: 0 10px 25px rgba(155, 93, 229, 0.05); 
   display: flex;
   flex-direction: column;
-  gap: 18px; /*  Afasta verticalmente cada elemento/input dentro do form  */
+  gap: 20px; /* Mantém o espaçamento vertical perfeito entre os blocos */
+  box-sizing: border-box;
 }
 
-/* Estilização padrão para todos os campos de texto e senha */
-form input[type="text"],
-form input[type="password"] {
+.campo-formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   width: 100%;
-  padding: 12px 16px;
-  border: 2px solid #cbd5e1; 
-  border-radius: 8px;
-  font-size: 1rem;
-  background-color: #ffffff;
-  color: #0f172a;
-  outline: none;
-  box-sizing: border-box; /* Impede que o padding quebre a largura */
-  transition: all 0.2s ease-in-out;
+  box-sizing: border-box;
+  margin-bottom: 15px; 
 }
 
-/* Efeito ao clicar no campo de texto */
-form input[type="text"]:focus,
-form input[type="password"]:focus {
-  border-color: #a855f7; 
-  box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.15); 
-}
-
-/* Estilização do botão interno do formulário */
-form button[type="submit"] {
-  width: 100%;
+.campo-formulario input[type="text"],
+.campo-formulario input[type="password"] {
+  display: block;
+  width: 100% !important; 
+  max-width: 100%;
   padding: 12px;
-  background-color: #7c3aed; 
-  color: #ffffff;
-  font-size: 1rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.2s, transform 0.1s;
+  font-size: 0.95rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px; 
+  background-color: #f8fafc; 
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  color: #334155;
+}
+.campo-formulario input:focus {
+  outline: none;
+  border-color: #a855f7 !important; 
+  background-color: #ffffff; 
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.15); 
+}
+
+.campo-formulario:not(:last-of-type) {
+  margin-bottom: 5px;
+}
+
+.msg-erro-login {
+  color: #d93025 !important;
+  font-size: 0.78rem !important;
+  font-weight: 500;
+  margin-top: 5px; /* Pequeno espaço logo abaixo do input */
+  text-align: left;
+  display: block;
+  width: 100%;
+}
+
+form input.input-com-erro {
+  border-color: #d93025 !important;
+}
+
+form input.input-com-erro:focus {
+  box-shadow: 0 0 0 3px rgba(217, 48, 37, 0.15) !important;
+}
+
+.container-botao {
   margin-top: 10px;
+  width: 100%;
 }
 
-/* Efeitos do botão do formulário */
-form button[type="submit"]:hover {
-  background-color: #6d28d9; 
-}
-
-form button[type="submit"]:active {
-  transform: scale(0.98); /* Efeito físico de clique esmagado */
-}
-
-/* Texto de erro de credenciais */
-form p {
-  color: #ef4444;
-  font-size: 0.88rem;
+.btn-favorito-custom {
+  background: #f3e8ff;
+  border: 1px solid #c084fc;
+  border-radius: 20px !important; /* Força o formato de pílula arredondada */
+  padding: 8px 16px;
+  cursor: pointer;
   font-weight: 600;
-  margin: 0;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+  box-sizing: border-box;
+  color: #6b21a8;
+}
+
+/* Efeito Hover quando NÃO está favoritado */
+.btn-favorito-custom:hover {
+  border-color: #f43f5e;
+  color: #f43f5e;
+  background-color: #fff1f2;
+}
+
+/*  Estado Ativo (Quando o usuário clica e favoritou) */
+.btn-favorito-custom.is-favorito {
+  color: #ffffff;
+  background-color: #f43f5e;
+  border-color: #f43f5e;
+  box-shadow: 0 4px 12px rgba(244, 63, 94, 0.2);
+}
+
+.btn-favorito-custom.is-favorito:hover {
+  background-color: #e11d48;
+  border-color: #e11d48;
+}
+
+.container-sobre {
+  max-width: 1000px; 
+  margin: 40px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.introducao-sobre {
   text-align: center;
+  margin-bottom: 50px;
+}
+
+.introducao-sobre h2 {
+  font-size: 2rem;
+  color: #1e293b;
+  margin-bottom: 15px;
+}
+
+.introducao-sobre p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #475569;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* GRID DE TRÊS COLUNAS PARA OS CARDS */
+.grid-categorias-sobre {
+  display: flex;
+  gap: 25px;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Garante que fique responsivo em telas menores */
+}
+
+/* OS CARDS INDIVIDUAIS */
+.card-pilar {
+  flex: 1;
+  min-width: 250px; /* Não deixa esmagar no mobile */
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(155, 93, 229, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efeito sutil ao passar o mouse por cima do card */
+.card-pilar:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(168, 85, 247, 0.08);
+}
+
+.icone-pilar {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.card-pilar h3 {
+  font-size: 1.25rem;
+  color: #1e293b;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.card-pilar p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #64748b;
+  margin: 0;
 }
