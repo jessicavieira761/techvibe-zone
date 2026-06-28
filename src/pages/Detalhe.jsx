@@ -1,11 +1,13 @@
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Detalhe() {
     const { id } = useParams();   // pega o :id da URL
     const [produto, setProduto] = useState(null);
     const [carregando, setCarregando] = useState(true);
     const [erro, setErro] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         setCarregando(true);
@@ -45,12 +47,18 @@ if (carregando) return <p className="mensagem-carregando">Carregando detalhes do
     return (
         <article className="detalhe">
             <h1>{produto.title}</h1>
-            <img src={produto.thumbnail} alt={produto.title} />
+
+            <div className="container-foto-detalhe">
+                <img className="img-detalhe" src={produto.thumbnail} alt={produto.title} />
+            </div>
+
             <p>{produto.description}</p>
             <p>Marca: {produto.brand}</p>
             <p>Avaliação: {produto.rating} ⭐</p>
             <p className="preco">R$ {produto.price}</p>
-            <Link to="/">← Voltar</Link>
+            <button onClick={() => navigate(-1)} className="btn-voltar">
+                ← Voltar
+            </button>
         </article>
     );
 }

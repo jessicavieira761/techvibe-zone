@@ -7,7 +7,9 @@ function Vitrine() {
     const [carregando, setCarregando] = useState(true);
     const [erro, setErro] = useState(null);
     const [busca, setBusca] = useState("");
-    const [categoria, setCategoria] = useState("laptops");
+    const [categoria, setCategoria] = useState(() => {
+        return localStorage.getItem('techvibe_categoria_ativa') || "laptops";
+    });
 
     useEffect(() => {
         setCarregando(true);        //ativa o carregamento
@@ -16,6 +18,8 @@ function Vitrine() {
             .then((dados) => {
                 setProdutos(dados.products);
                 setCarregando(false);
+
+                localStorage.setItem('techvibe_categoria_ativa', categoria);
             })
             .catch(() => {
                 setErro("Não foi possível carregar os produtos.");

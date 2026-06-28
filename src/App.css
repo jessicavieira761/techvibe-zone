@@ -14,19 +14,18 @@ body {
   min-height: 100vh;
   }
 
-  .conteudo-responsivo {
-    max-width: 900px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 20px;
-    flex-grow: 1;
-  }
+.conteudo-responsivo {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  flex-grow: 1;
+}
 
 /* Cabeçalho */
 .cabecalho-tech {
   text-align: center;
   padding: 30px 0;
-  /*border-bottom: 2px solid #1f1a3a;*/
   margin-bottom: 40px;
 }
 
@@ -78,20 +77,23 @@ body {
 
 .container-foto {
   width: 100%;
-  height: 160px; /*para manter as fotos allinhadas na mesma altura */
+  height: 200px; /*para manter as fotos alinhadas na mesma altura */
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 15px;
+  overflow: hidden;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .container-foto img {
   max-width: 100%;
-  height: auto;
-  max-height: 750px;
+  
+  max-height: 100%;
   object-fit: contain; /* para a foto do produto não esticar */
   display: block;
-  margin: 0 auto 20px auto;
+  
 }
 
 /*Reduz para 1 coluna só se abrir no celular*/
@@ -141,7 +143,7 @@ body {
   width: 100%;
   padding: 10px;
   margin: 8px 0;
-  border-radius: 8px;
+  border-radius: 10px;
   border: none;
   font-weight: bold;
   cursor: pointer;
@@ -196,7 +198,7 @@ nav a {
 nav a.active {
   font-weight: bold;
   color: #a855f7;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* formulário de login */
@@ -467,4 +469,89 @@ form input.input-com-erro:focus {
   color: #64748b;
   margin: 0;
   line-height: 1.4;
+}
+
+/* Estilos para a foto na tela de detalhes */
+.container-foto-detalhe {
+  width: 100%;
+  max-width: 450px; 
+  margin: 0 auto 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-detalhe {
+  width: 100%;
+  height: auto;
+  max-height: 380px; 
+  object-fit: contain; 
+  display: block;
+}
+
+detalhe p {
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Destaca o preço em roxo e com fonte maior */
+.detalhe .preco {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #8a4fff; 
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+/* Estilização do Botão Voltar Dinâmico */
+.btn-voltar {
+  display: inline-block;
+  background-color: #8a4fff;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px; 
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-top: 20px;
+  box-shadow: 0 4px 6px rgba(138, 79, 255, 0.15); 
+}
+
+.btn-voltar:hover {
+  background-color: #7135e6;
+}
+
+/* Efeito ao clicar (Active) */
+.btn-voltar:active {
+  transform: scale(0.98); /* Sutil efeito de clique afundando */
+}
+
+.detalhe {
+  max-width: 600px;
+  margin: 40px auto; 
+  padding: 20px;
+  text-align: left; 
+}
+
+.detalhe h1 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.detalhe p {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.detalhe .preco {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #8a4fff; 
+  margin-top: 15px;
 }
