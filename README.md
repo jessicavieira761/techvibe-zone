@@ -1,5 +1,9 @@
 # 🚀 TechVibe Zone — Vitrine de Hardware
 
+🔗 **Acesse o projeto homologado e online:** [https://techvibe-zone.netlify.app/]
+
+---
+
 Seja bem-vindo(a) ao repositório da **TechVibe Zone**, uma aplicação web interativa desenvolvida em **React** e **Vite**. Este projeto é uma vitrine virtual especializada em smartphones de última geração e notebooks de alta performance, criada como parte dos critérios de avaliação do curso de **Análise e Desenvolvimento de Sistemas (ADS)** do **IFES - Instituto Federal do Espírito Santo (Campus Alegre)**.
 
 A aplicação utiliza conceitos modernos de arquitetura SPA (Single Page Application), gerenciamento de estado global e consumo de APIs REST de mercado.
@@ -24,7 +28,7 @@ A aplicação utiliza conceitos modernos de arquitetura SPA (Single Page Applica
 
 ---
 
-## 🔑 Credenciais de Teste (Para o Professor)
+## 🔑 Credenciais de Teste 
 
 Para avaliar o fluxo de login real integrado à API da DummyJSON e pontuar os critérios de bônus, utilize a conta de testes oficial abaixo:
 
